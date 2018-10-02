@@ -18,18 +18,24 @@ public class MundoCangrejo extends World
         super(600, 400, 1); 
         Tiempo tiempo = new Tiempo();
         this.addObject(tiempo, 60, 20);
-        prepare();
+        Langosta langosta = new Langosta();
+        addObject(langosta,62,368);
+        Crab crab = new Crab();
+        addObject(crab,293,274);
+        prepare(totalGusanos);
     }
 
+    public Langosta accedeLangosta()
+    {
+	return langosta;
+    }
+    
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
      */
-    private void prepare()
+    private void prepare(numGusanos)
     {
-        Crab crab = new Crab();
-        addObject(crab,293,274);
-        
         for(int i = 0; i = numGusanos; i++){
             Worm w = new Worm();
             int x = Greenfoot.getRandomNumber(520 + 20);
@@ -69,7 +75,6 @@ public class MundoCangrejo extends World
         worm9.setLocation(221,329);
         worm9.setLocation(241,342);
         worm7.setLocation(149,279); */ 
-        Langosta langosta = new Langosta();
-        addObject(langosta,62,368);
+        
     }
 }

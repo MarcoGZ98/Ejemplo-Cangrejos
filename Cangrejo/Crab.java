@@ -14,6 +14,21 @@ public class Crab extends Actor
      */
     public void act() 
     {
-        // Add your action code here.
+        super.move(4);
+    if(Greenfoot.isKeyDown("right")){
+            turn(-3);
     }    
+    if(Greenfoot.isKeyDown("right")){
+            turn(-3);
+    }  
+    if(isTouching(Worm.class)){
+            removeTouching(Worm.class);
+            Greenfoot.playSOund("eating.wav");
+    }    
+    if(isTouching(Lobster.class)){
+            vidas.setValue(vidas.getValue() - 1);
+            setLocation(250, 250);
+            getWorldOfType(MundoCangrejo.class).accedeLangosta();
+    }    
+    }
 }
