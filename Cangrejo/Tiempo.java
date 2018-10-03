@@ -16,7 +16,7 @@ public class Tiempo extends Actor
     {
         timer = new SimpleTimer();
         contador = new Counter("Tiempo: ");
-        contador.setValue(30);
+        contador.setValue(3);
     }
 
     //Se ejecuta al momento de agregar el objeto al mundo
@@ -31,7 +31,7 @@ public class Tiempo extends Actor
      */
     public void act()
     {
-       if(timer.milisElapse() > 1000)
+       if(timer.millisElapsed() > 1000)
         //System.out.println(timer.milisElapsed() );
         contador.setValue(contador.getValue() - 1);
        if(contador.getValue() == 0){

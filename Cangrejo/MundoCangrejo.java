@@ -8,35 +8,51 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MundoCangrejo extends World
 {
+    private Lobster lobster;
+    private Crab crab;
+    private GreenfootSound musica; 
+    
     /**
      * Constructor for objects of class MyWorld.
      * 
      */
-    public MundoCangrejo()
+    public MundoCangrejo(int totalGusanos)
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1); 
         Tiempo tiempo = new Tiempo();
         this.addObject(tiempo, 60, 20);
-        Langosta langosta = new Langosta();
+        Lobster langosta = new Lobster();
         addObject(langosta,62,368);
         Crab crab = new Crab();
         addObject(crab,293,274);
         prepare(totalGusanos);
+        musica = new GreenfootSound("ufo-t-balt.mp3");
+    }
+    
+    public void started()
+    {
+        //Greenfoot.playSound("ufo-t-balt.mp3");
+        musica.playLoop();
+    }
+    
+    public void stopped()
+    {
+        musica.pause();
     }
 
-    public Langosta accedeLangosta()
+    public Lobster accedeLangosta()
     {
-	return langosta;
+	return lobster;
     }
     
     /**
      * Prepare the world for the start of the program.
      * That is: create the initial objects and add them to the world.
      */
-    private void prepare(numGusanos)
+    private void prepare(int numGusanos)
     {
-        for(int i = 0; i = numGusanos; i++){
+        for(int i = 0; i < numGusanos; i++){
             Worm w = new Worm();
             int x = Greenfoot.getRandomNumber(520 + 20);
             int y = Greenfoot.getRandomNumber(520 + 20);
