@@ -16,6 +16,11 @@ public class Crab extends Actor
         vidas.setValue(3);
     }
     
+    protected void addedToWorld(World world)
+    {
+        world.addObject(vidas, 500, 20);
+    }
+    
     /**
      * Act - do whatever the Crab wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
@@ -26,7 +31,7 @@ public class Crab extends Actor
     if(Greenfoot.isKeyDown("right")){
             turn(3);
     }    
-    if(Greenfoot.isKeyDown("right")){
+    if(Greenfoot.isKeyDown("left")){
             turn(-3);
     }  
     if(isTouching(Worm.class)){
